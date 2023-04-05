@@ -1,5 +1,5 @@
 {% set name = "pynecone" %}
-{% set version = "0.1.20" %}
+{% set version = "0.1.21" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pynecone-{{ version }}.tar.gz
-  sha256: ec897d7cd4c46e787a3b9011404c5a36b512a46e9e722babdf70aee42bb5c740
+  sha256: c68b4def8b4571e3c2738020b523e3299d61b0dd5696ae5989585f956aa66592
 
 build:
   noarch: python
@@ -46,7 +46,7 @@ test:
   commands:
     - pip list
     - pip check
-    - 'mkdir test_app;cd test_app;pc init;ls'
+    - mkdir test_app;cd test_app;pc init;ls
   requires:
     - pip
 
