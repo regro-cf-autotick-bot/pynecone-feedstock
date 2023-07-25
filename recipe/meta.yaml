@@ -1,5 +1,5 @@
 {% set name = "pynecone" %}
-{% set version = "0.1.32" %}
+{% set version = "0.1.34" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pynecone-{{ version }}.tar.gz
-  sha256: 75dde34884f32f13f48965244449d670bbc6358700f5fab858d2d7399d979eea
+  sha256: 04c316d59833e64cf479203fcdd249eae8f58bb41218c59255f1563b0ce9e96c
 
 build:
   noarch: python
