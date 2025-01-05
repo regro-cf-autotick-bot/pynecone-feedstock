@@ -6,19 +6,19 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pynecone-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pynecone-{{ version }}.tar.gz
   sha256: 04c316d59833e64cf479203fcdd249eae8f58bb41218c59255f1563b0ce9e96c
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
     - poetry
-    - python >=3.7,<4.0
+    - python {{ python_min }}
   run:
     - cloudpickle >=2.2.1,<3.0.0
     - fastapi >=0.96.0,<0.97.0
@@ -29,7 +29,7 @@ requirements:
     - plotly >=5.13.0,<6.0.0
     - psutil >=5.9.4,<6.0.0
     - pydantic >=1.10.2,<2.0.0
-    - python >=3.7,<4.0
+    - python >={{ python_min }},<4.0
     - python-dotenv >=0.13.0,<0.14.0
     - python-multipart >=0.0.5,<0.0.6
     - python-socketio >=5.7.0,<6.0.0
@@ -52,6 +52,7 @@ test:
     - mkdir test_app;cd test_app;pc init;ls
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pynecone.io
